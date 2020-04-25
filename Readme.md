@@ -19,5 +19,5 @@ This docker application is for Sleep Quality Assessment. It is developed in Ubun
 Create directory 'device_config' in 'dt' directory to store config information of two sensors.
 
 * Fitbit Alta HR  
-    
+    Enter in [the developer page of Fitbit](https://dev.fitbit.com/) to request client id and client secret to retrieve data from Fitbit Alta HR. When users run fitbit mode at first time, write down client information.
 * Polar H10
