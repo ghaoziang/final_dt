@@ -7,6 +7,6 @@ oauthlib==3.1.0
 pandas==1.0.3
 polar-accesslink==0.0.5
 PyYAML==3.12
-requests==2.18.4
+requests==2.20.0
 scikit-learn==0.22
 scipy==1.4.1
