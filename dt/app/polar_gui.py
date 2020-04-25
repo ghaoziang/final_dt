@@ -9,7 +9,7 @@ from app.access_polar import PolarAccessLinkExample
 from app.analyzer import HRAnalyzer
 import sys
 
-config_path = os.path.join(os.path.pardir, "device_config")
+config_path = os.path.join(os.getcwd(), "device_config")
 polar_path = "/home/gaoziang/databox/polar_h10/"
 
 

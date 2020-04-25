@@ -10,11 +10,10 @@ import pandas as pd
 from app.analyzer import HRAnalyzer
 import sys
 
-config_path = os.path.join(os.path.pardir, "device_config")
+config_path = os.path.join(os.getcwd(), "device_config")
 ecg_path = "/home/gaoziang/databox/raw_ecg/"
 polar_path = "/home/gaoziang/databox/polar_h10/"
 fitbit_path = "/home/gaoziang/databox/fitbit/"
-
 
 class FitbitClientWindow(QDialog):
     def __init__(self):
