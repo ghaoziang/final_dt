@@ -16,6 +16,8 @@ This docker application is for Sleep Quality Assessment. It is developed in Ubun
 
 ### Sensor Registration
 
+Create directory 'device_config' in 'dt' directory to store config information of two sensors.
+
 * Fitbit Alta HR  
     
 * Polar H10
