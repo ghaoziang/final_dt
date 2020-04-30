@@ -19,5 +19,6 @@ This docker application is for Sleep Quality Assessment. It is developed in Ubun
 Create directory 'device_config' in 'dt' directory to store config information of two sensors.
 
 * Fitbit Alta HR  
-    
+    Enter in [the developer page of Fitbit](https://dev.fitbit.com/) and log in using Fitbit account. Request client id and client secret to retrieve data from Fitbit Alta HR. When users run fitbit mode at first time, write down client information.
 * Polar H10
+    Go to [PolarAccessLink page](https://admin.polaraccesslink.com/) and log in using your Polar Flow credentials or create new Flow account. Fill your application/service information to create a client. After client is created, write down OAuth2 clientID and secret into the application when you enter in polar mode at first time.
