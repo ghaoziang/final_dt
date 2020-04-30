@@ -12,7 +12,7 @@ try:
 except NameError:
     pass
 '''
-config_path = os.path.join(os.path.pardir, "device_config")
+config_path = os.path.join(os.getcwd(), "device_config")
 CONFIG_FILENAME = os.path.join(config_path, "config.yml")
 polar_path = "/home/gaoziang/databox/polar_h10/"
 

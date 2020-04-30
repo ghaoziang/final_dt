@@ -3,7 +3,6 @@ import sys
 from app.fitbit_gui import *
 from app.ecg_gui import *
 from app.polar_gui import PolarWindow
-import os
 
 config_path = os.path.join(os.getcwd(), "device_config")
 ecg_path = "/home/databox/raw_ecg/"
