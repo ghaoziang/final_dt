@@ -9,7 +9,7 @@ from accesslink import AccessLink
 
 CALLBACK_PORT = 5000
 CALLBACK_ENDPOINT = "/oauth2_callback"
-config_path = os.path.join(os.path.pardir, "device_config")
+config_path = os.path.join(os.getcwd(), "device_config")
 CONFIG_FILENAME = os.path.join(config_path, "config.yml")
 REDIRECT_URL = "http://localhost:{}{}".format(CALLBACK_PORT, CALLBACK_ENDPOINT)
 config = None
@@ -28,6 +28,7 @@ app = Flask(__name__)
 def authorize():
     print(type(accesslink.get_authorization_url()))
     link = accesslink.get_authorization_url()
+    print(link)
     return redirect(link)
 
 
@@ -41,7 +42,7 @@ def callback():
     # Get authorization from the callback request parameters
     #
     authorization_code = request.args.get("code")
-
+    print(authorization_code)
     #
     # Get an access token for the user using the authorization code.
     #
@@ -49,7 +50,7 @@ def callback():
     # should be fetched immediately after the authorization step.
     #
     token_response = accesslink.get_access_token(authorization_code)
-
+    print(token_response)
     #
     # Save the user's id and access token to the configuration file.
     #
@@ -80,6 +81,7 @@ def shutdown():
 
 
 def auth():
-    print("Navigate to http://localhost:{port}/ for authorization.\n".format(port=CALLBACK_PORT))
-    app.run(host='localhost', port=CALLBACK_PORT)
+    print("Navigate to http://0.0.0.0:{port}/ for authorization.\n".format(port=CALLBACK_PORT))
     print(CALLBACK_ENDPOINT)
+    app.run(host='0.0.0.0', port=CALLBACK_PORT)
+

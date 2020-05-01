@@ -34,12 +34,15 @@ class OAuth2Server:
         server to accept the response
         """
         url, _ = self.fitbit.client.authorize_token_url()
+        print(url)
         # Open the web browser in a new thread for command-line browser support
         threading.Timer(1, webbrowser.open, args=(url,)).start()
 
         # Same with redirect_uri hostname and port.
         urlparams = urlparse(self.redirect_uri)
-        cherrypy.config.update({'server.socket_host': urlparams.hostname,
+        print(urlparams.hostname)
+        print(urlparams.port)
+        cherrypy.config.update({'server.socket_host': '0.0.0.0',
                                 'server.socket_port': urlparams.port})
 
         cherrypy.quickstart(self)

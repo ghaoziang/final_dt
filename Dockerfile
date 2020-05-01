@@ -6,6 +6,8 @@ COPY requirements.txt /dt
 WORKDIR /dt
 
 ENV PYTHONPATH "${PYTHONPATH}:/control"
+
+RUN export TZ=Europe/London
 RUN apt-get update \
     && apt-get install -y \
     python3.6 \
@@ -15,6 +17,12 @@ RUN apt-get update \
     python3-setuptools \
     mesa-common-dev \
     libglu1-mesa-dev \
-    python3-pyqt5
+    python3-pyqt5 \
+    firefox
+
+RUN mkdir ~/.vnc
 
 RUN pip3 install -r requirements.txt
+
+EXPOSE 8080
+EXPOSE 5000
